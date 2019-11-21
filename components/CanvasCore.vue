@@ -21,7 +21,7 @@ export default {
     }
 
     const ctx = this.canvas.getContext('2d')
-    const [image, sx, sy, sw, sh, dx, dy, dw, dh] = [
+    const args = [
       item.image,
       item.sx ? item.sx : 0,
       item.sy ? item.sy : 0,
@@ -32,7 +32,7 @@ export default {
       item.dw,
       item.dh
     ]
-    return ctx.drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh)
+    return ctx.drawImage(...args)
   }
 }
 </script>
