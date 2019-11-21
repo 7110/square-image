@@ -14,16 +14,21 @@ export default {
   },
   render() {
     const item = this.item
-    if (!(item.image && item.dw && item.dh && this.canvas)) return
+    if (
+      !(item.image && item.sw && item.sh && item.dw && item.dh && this.canvas)
+    ) {
+      return
+    }
+
     const ctx = this.canvas.getContext('2d')
     const [image, sx, sy, sw, sh, dx, dy, dw, dh] = [
       item.image,
-      item.sx,
-      item.sy,
+      item.sx ? item.sx : 0,
+      item.sy ? item.sy : 0,
       item.sw,
       item.sh,
-      item.dx,
-      item.dy,
+      item.dx ? item.dx : 0,
+      item.dy ? item.dy : 0,
       item.dw,
       item.dh
     ]
