@@ -14,7 +14,7 @@ export default {
 
 <style lang="scss">
 .Header {
-  min-height: 48px;
+  min-height: $si-header-height;
   padding: $si-basic-space * 2;
   overflow: hidden;
   display: flex;
@@ -22,6 +22,7 @@ export default {
   border-bottom: 2px solid $si-color-border;
 
   &_main {
+    color: $si-color-text;
     font-size: 24px;
   }
 

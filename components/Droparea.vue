@@ -12,10 +12,10 @@
       <p class="Droparea_message">画像をドロップ</p>
       <p class="Droparea_message">OR 画像を選択</p>
       <input
-        type="file"
-        class="Droparea_input"
         id="droparea_file"
         @change="onDrop"
+        type="file"
+        class="Droparea_input"
       />
     </div>
   </label>
