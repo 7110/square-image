@@ -1,28 +1,32 @@
+<template>
+  <canvas :width="width" :height="height" />
+</template>
+
 <script>
 export default {
-  name: 'CanvasCore',
+  name: 'Canvas',
   props: {
     item: {
       required: true,
       type: Object
     },
-    // @TODO fix type
-    canvas: {
+    width: {
       required: true,
-      type: undefined
+      type: Number
+    },
+    height: {
+      required: true,
+      type: Number
     }
   },
-  render() {
+  mounted() {
     const item = this.item
-    if (
-      !(item.image && item.sw && item.sh && item.dw && item.dh && this.canvas)
-    ) {
+    if (!(item.img && item.sw && item.sh && item.dw && item.dh)) {
       return
     }
-
-    const ctx = this.canvas.getContext('2d')
+    const ctx = this.$el.getContext('2d')
     const args = [
-      item.image,
+      item.img,
       item.sx ? item.sx : 0,
       item.sy ? item.sy : 0,
       item.sw,
