@@ -30,7 +30,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['@/assets/scss/reset.scss'],
   /*
    ** Global style resources
    */
