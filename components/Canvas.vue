@@ -1,5 +1,5 @@
 <template>
-  <canvas :width="width" :height="height" />
+  <canvas :width="width" :height="height" class="Canvas" />
 </template>
 
 <script>
@@ -40,3 +40,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.Canvas {
+  border: 1px solid $si-color-border;
+}
+</style>
