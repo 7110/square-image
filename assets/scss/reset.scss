@@ -22,6 +22,14 @@ a {
   text-decoration: none;
 }
 
+button{
+  padding: 0;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
 canvas {
   display: block;
 }
