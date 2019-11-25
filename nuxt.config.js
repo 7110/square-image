@@ -5,6 +5,9 @@ export default {
    */
   head: {
     title: process.env.npm_package_name || '',
+    htmlAttrs: {
+      lang: 'ja'
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -12,6 +15,10 @@ export default {
         hid: 'description',
         name: 'description',
         content: process.env.npm_package_description || ''
+      },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1'
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
@@ -23,7 +30,13 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['@/assets/scss/reset.scss'],
+  /*
+   ** Global style resources
+   */
+  styleResources: {
+    scss: ['@/assets/scss/variables.scss']
+  },
   /*
    ** Plugins to load before mounting the App
    */
@@ -38,7 +51,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/pwa'],
+  modules: ['@nuxtjs/pwa', '@nuxtjs/style-resources'],
   /*
    ** Build configuration
    */
