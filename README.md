@@ -1,6 +1,6 @@
 # square-image
 
-> tools for processing images into squares.
+> 🎨 securely shape the image square on the client side.
 
 ## Build Setup
 
@@ -17,4 +17,10 @@ $ yarn start
 
 # generate static project
 $ yarn generate
+
+# generate static project for gh-pages
+$ yarn generate:gh-pages
+
+# deploy /dist to gh-pages
+$ yarn deploy
 ```

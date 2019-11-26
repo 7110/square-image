@@ -1,7 +1,7 @@
 {
   "name": "square-image",
   "version": "1.0.0",
-  "description": "tools for processing images into squares.",
+  "description": "🎨 securely shape the image square on the client side.",
   "author": "7110",
   "private": true,
   "scripts": {
