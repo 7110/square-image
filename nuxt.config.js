@@ -1,10 +1,7 @@
-const routerBase =
-  process.env.DEPLOY_ENV === 'GH_PAGES'
-    ? { router: { base: '/square-image/' } }
-    : {}
+const base = process.env.DEPLOY_ENV === 'GH_PAGES' ? '/square-image/' : ''
 
 export default {
-  ...routerBase,
+  router: { base },
 
   mode: 'universal',
   /*
@@ -26,9 +23,40 @@ export default {
       {
         name: 'viewport',
         content: 'width=device-width, initial-scale=1'
-      }
+      },
+      {
+        hid: 'og:site_name',
+        property: 'og:site_name',
+        content: 'Square Image | 画像をセキュアに正方形へ'
+      },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: 'https://7110.github.io/square-image/'
+      },
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: 'Square Image | 画像をセキュアに正方形へ'
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content:
+          '通信せずにブラウザ上で画像を加工するからセキュリティ面でも安心・安全！'
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: `https://7110.github.io/square-image/images/ogp.png`
+      },
+      { name: 'twitter:card', content: 'summary_large_image' }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: `${base || '/'}favicon.ico` },
+      { rel: 'preload', as: 'image', href: `${base || '/'}images/logo.png` }
+    ]
   },
   /*
    ** Customize the progress-bar color
