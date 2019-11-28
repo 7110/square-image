@@ -1,4 +1,4 @@
-# square-image
+# Square Image
 
 <p style="text-align: center;">
   <a href="https://7110.github.io/square-image/"><img style="max-width: 100%; width: 600px;" src="./static/images/ogp.png"></a>
