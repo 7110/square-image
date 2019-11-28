@@ -49,7 +49,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: `${base || '/'}images/ogp.png`
+        content: `https://7110.github.io/square-image/images/ogp.png`
       },
       { name: 'twitter:card', content: 'summary_large_image' }
     ],
