@@ -1,10 +1,8 @@
-const routerBase =
-  process.env.DEPLOY_ENV === 'GH_PAGES'
-    ? { router: { base: '/square-image/' } }
-    : {}
+const base = process.env.DEPLOY_ENV === 'GH_PAGES' ? '/square-image/' : ''
+const relativePath = base || '/'
 
 export default {
-  ...routerBase,
+  router: { base },
 
   mode: 'universal',
   /*
@@ -49,12 +47,16 @@ export default {
         content:
           '通信せずにブラウザ上で画像を加工するからセキュリティ面でも安心・安全！'
       },
-      { hid: 'og:image', property: 'og:image', content: '/images/ogp.png' },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: `${relativePath}images/ogp.png`
+      },
       { name: 'twitter:card', content: 'summary_large_image' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'preload', as: 'image', href: '/images/logo.png' }
+      { rel: 'icon', type: 'image/x-icon', href: `${relativePath}favicon.ico` },
+      { rel: 'preload', as: 'image', href: `${relativePath}images/logo.png` }
     ]
   },
   /*
