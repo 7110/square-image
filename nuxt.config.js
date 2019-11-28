@@ -1,5 +1,4 @@
 const base = process.env.DEPLOY_ENV === 'GH_PAGES' ? '/square-image/' : ''
-const relativePath = base || '/'
 
 export default {
   router: { base },
@@ -50,13 +49,13 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: `${relativePath}images/ogp.png`
+        content: `${base || '/'}images/ogp.png`
       },
       { name: 'twitter:card', content: 'summary_large_image' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: `${relativePath}favicon.ico` },
-      { rel: 'preload', as: 'image', href: `${relativePath}images/logo.png` }
+      { rel: 'icon', type: 'image/x-icon', href: `${base || '/'}favicon.ico` },
+      { rel: 'preload', as: 'image', href: `${base || '/'}images/logo.png` }
     ]
   },
   /*
