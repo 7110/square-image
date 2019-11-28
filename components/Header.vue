@@ -2,7 +2,7 @@
   <header class="Header">
     <h1 class="Header_title">
       <img
-        src="/images/logo.png"
+        src="@/static/images/logo.png"
         alt="Square Image ロゴ画像"
         class="Header_logo"
       />
