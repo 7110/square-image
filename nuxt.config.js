@@ -1,4 +1,11 @@
+const routerBase =
+  process.env.DEPLOY_ENV === 'GH_PAGES'
+    ? { router: { base: '/square-image/' } }
+    : {}
+
 export default {
+  ...routerBase,
+
   mode: 'universal',
   /*
    ** Headers of the page
